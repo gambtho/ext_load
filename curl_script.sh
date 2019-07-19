@@ -1,14 +1,8 @@
 #!/bin/bash
 # modified from https://www.badunetworks.com/performance-testing-curl-part-2-scripting/#
-function usage() {
-echo "Usage:  $0 count size udelay host1 port1 host2 port2"
-echo "Example: $0 10 50k 1000 mytestserver.net 80 mytestserver.net 81";
-}
 
-# assign parameters to variables
-count=10
-# size=50k
-delay=10
+
+count=1000
 host1=www.google.com 
 port1=80
 host2=www.bing.com
@@ -46,7 +40,6 @@ tot2=`echo "scale=3;${tot2}+${val2}" | bc`
 printf "%s\t%s\n" "$res1" "$res2"
 
 let i=$i-1
-# sleep $delay
 done
 
 # print summary
