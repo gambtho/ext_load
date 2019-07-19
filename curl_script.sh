@@ -12,7 +12,7 @@ delay=10
 host1=www.google.com 
 port1=80
 host2=www.bing.com
-port2=443
+port2=80
 
 # take the dns hit here
 curl -w "$i: %{time_total} %{http_code} %{size_download} %{url_effective}\n" -o "/dev/null" -s http://${host1}:80 &> /dev/null
@@ -46,7 +46,7 @@ tot2=`echo "scale=3;${tot2}+${val2}" | bc`
 printf "%s\t%s\n" "$res1" "$res2"
 
 let i=$i-1
-sleep $delay
+# sleep $delay
 done
 
 # print summary
